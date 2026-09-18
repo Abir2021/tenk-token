@@ -3,37 +3,29 @@ const TENK = {
   ticker: "$TENK",
   chain: "Arc",
   chainId: 5042,
-  launchpad: "https://lolpad.fun/",
-  ca: "",
+  launchpad: "https://lolpad.fun/token/0x68713a4efeb44c3f92dae4cbe7b0ba9c53c7ae07?tab=holders",
+  ca: "0x68713a4efeb44c3f92dae4cbe7b0ba9c53c7ae07",
 };
 
 const caEl = document.getElementById("ca");
 const copyBtn = document.getElementById("copy-ca");
-const buyBtns = document.querySelectorAll("[data-buy]");
 
 function renderCa() {
-  caEl.textContent = TENK.ca || "TBA — launching on lolpad.fun";
+  if (caEl) caEl.textContent = TENK.ca;
 }
 
-buyBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    if (!TENK.ca) return;
-    e.preventDefault();
-    window.open(TENK.launchpad, "_blank", "noopener");
+if (copyBtn) {
+  copyBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(TENK.ca);
+      copyBtn.textContent = "copied";
+      setTimeout(() => (copyBtn.textContent = "copy"), 1200);
+    } catch {
+      copyBtn.textContent = "nope";
+      setTimeout(() => (copyBtn.textContent = "copy"), 1200);
+    }
   });
-});
-
-copyBtn.addEventListener("click", async () => {
-  const value = TENK.ca || TENK.launchpad;
-  try {
-    await navigator.clipboard.writeText(value);
-    copyBtn.textContent = "copied";
-    setTimeout(() => (copyBtn.textContent = "copy"), 1200);
-  } catch {
-    copyBtn.textContent = "nope";
-    setTimeout(() => (copyBtn.textContent = "copy"), 1200);
-  }
-});
+}
 
 renderCa();
 
