@@ -4,7 +4,6 @@ const TENK = {
   chain: "Arc",
   chainId: 5042,
   launchpad: "https://lolpad.fun/",
-  x: "https://x.com/DabidWm",
   ca: "",
 };
 
