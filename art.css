@@ -1,0 +1,4 @@
+.art{min-height:360px;background:radial-gradient(circle at 70% 30%,rgba(58,209,118,.25),transparent 40%),linear-gradient(180deg,#2a241c,#14110e);overflow:hidden}
+.art-cap{position:absolute;left:28px;top:28px;font-family:Fraunces,serif;font-size:72px;color:#f3ead6;letter-spacing:-.04em}
+.art-line{position:absolute;left:-10%;bottom:28%;width:90%;height:8px;background:#3ad176;transform:rotate(-12deg);box-shadow:0 0 24px #3ad176}
+.art-flag{position:absolute;right:24px;top:36%;border:1px solid #c9a227;color:#c9a227;padding:8px 12px;letter-spacing:.2em;font-size:11px}
