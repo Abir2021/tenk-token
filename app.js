@@ -7,6 +7,13 @@ const TENK = {
   ca: "0x68713a4efeb44c3f92dae4cbe7b0ba9c53c7ae07",
 };
 
+const art = document.getElementById("tenk-art");
+if (art) {
+  document.querySelectorAll(".js-logo").forEach((el) => {
+    el.src = art.getAttribute("src");
+  });
+}
+
 const caEl = document.getElementById("ca");
 const copyBtn = document.getElementById("copy-ca");
 
